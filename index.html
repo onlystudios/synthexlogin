@@ -1,19 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
-  <link rel="stylesheet" type="text/css" href="output.css" >
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #36393f; /* Discord Dark Theme background color */
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    a#login {
+      background-color: #7289da; /* Discord blue color */
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    a#login:hover {
+      background-color: #5865f2; /* Discord hover blue color */
+    }
+
+    a#login i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    /* You can adjust these styles based on your preferences */
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="flex items-center justify-center h-screen bg-discord-gray text-white" >
-        <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=1159968087316115519&redirect_uri=https%3A%2F%2Fauth.synoserver.com%2Fdashboard.html&response_type=token&scope=email%20identify" class="bg-discord-blue  text-xl px-5 py-3 rounded-md font-bold flex items-center space-x-4 hover:bg-gray-600 transition duration-75">
-            <i class="fa-brands fa-discord text-2xl"></i>
-            <span>Login with Discord</span>
-        </a>
-    </div>
-    
+  <div class="flex items-center justify-center h-screen bg-discord-gray text-white">
+    <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=1159968087316115519&redirect_uri=https%3A%2F%2Fauth.synoserver.com%2Fdashboard.html&response_type=token&scope=email%20identify">
+      <i class="fab fa-discord"></i>
+      <span>Login with Discord</span>
+    </a>
+  </div>
 </body>
 </html>
