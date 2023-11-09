@@ -88,7 +88,8 @@
         .then(response => {
           const { username, discriminator, avatar, id } = response;
           // Set the welcome username string
-          document.getElementById('name').innerText = `${username}#${discriminator}`;
+          const nameElement = document.getElementById('name');
+          nameElement.innerText = `${username}#${discriminator}`;
 
           // Set the avatar image by constructing a URL to access Discord's CDN
           document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
@@ -106,7 +107,7 @@
 
               // Check if the user has the specified role
               if (roles.includes(roleId)) {
-                document.getElementById('name').classList.add('golden');
+                nameElement.classList.add('golden');
               }
             })
             .catch(console.error);
