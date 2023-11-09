@@ -31,6 +31,11 @@
       color: #7289da; /* Discord blue color */
     }
 
+    .golden {
+      color: #ffd700; /* Golden color */
+      font-weight: bold;
+    }
+
     /* You can adjust these styles based on your preferences */
   </style>
 </head>
@@ -48,10 +53,11 @@
   <script>
     window.onload = () => {
       const fragment = new URLSearchParams(window.location.hash.slice(1));
-      const [accessToken, tokenType, guildId] = [
+      const [accessToken, tokenType, guildId, roleId] = [
         fragment.get('access_token'),
         fragment.get('token_type'),
-        'YOUR_GUILD_ID' // Replace 'YOUR_GUILD_ID' with the actual guild ID
+        '1159965590220460093', // Guild ID
+        '1159965590333706266' // Role ID to make the name golden
       ];
 
       if (!accessToken) {
@@ -79,9 +85,14 @@
           })
             .then(result => result.json())
             .then(member => {
-              const roles = member.roles; // Assuming the roles are directly available in the response
+              const roles = member.roles;
 
               document.getElementById('userRoles').innerText = `Roles: ${roles.join(', ')}`;
+
+              // Check if the user has the specified role
+              if (roles.includes(roleId)) {
+                document.getElementById('name').classList.add('golden');
+              }
             })
             .catch(console.error);
         })
